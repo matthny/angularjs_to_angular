@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 
 const config = {
-  entry: './app/index.js',
+  entry: './build/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
@@ -12,7 +12,11 @@ const config = {
     minimize: false
   },
 
-  mode: 'development'
+  mode: 'development',
+
+  resolve: {
+    extensions: ['.tsx', '.ts'],
+  }
   
 };
 
