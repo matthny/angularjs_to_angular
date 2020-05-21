@@ -17,8 +17,8 @@ const config = {
   module: {
     rules: [
       {
-        use: 'ts-loader',
-        exclude: /node_modules/
+        test: /\.tsx?$/, 
+        loader: "ts-loader" 
       },
     ],
   },
@@ -27,9 +27,6 @@ const config = {
   resolve: {
     extensions: ['.tsx', '.ts'],
   },
-
-  
-  
 };
 
 
