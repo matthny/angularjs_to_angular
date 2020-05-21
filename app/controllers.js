@@ -1,3 +1,5 @@
+import { weatherApp } from './app.js';
+
 weatherApp.controller('homeController', ['$scope', '$location', 'cityService', function($scope, $location, cityService) {
   $scope.city = cityService.city;
 

@@ -1,3 +1,5 @@
+import { weatherApp } from './app.js';
+
 weatherApp.service('cityService', function() {
   this.city = 'London';
 });

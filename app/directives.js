@@ -1,3 +1,5 @@
+import { weatherApp } from './app.js';
+
 weatherApp.directive("weatherReport", function() {
   return {
     restrict: 'E',

@@ -1,1 +1,1 @@
-let weatherApp = angular.module('weatherApp', ['ngRoute', 'ngResource']);
+export const weatherApp = angular.module('weatherApp', ['ngRoute', 'ngResource']);
