@@ -27,6 +27,8 @@ const config = {
   resolve: {
     extensions: ['.tsx', '.ts'],
   },
+
+  devtool: 'source-map'
 };
 
 
