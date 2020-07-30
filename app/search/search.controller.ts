@@ -1,18 +1,17 @@
 export class SearchController implements ng.IComponentController {
 
+  public city: string;
+
   constructor(
     public $scope,
     public $location,
     private cityService
   ) {
-    $scope.city = cityService.city;
+    this.city = this.cityService.city;
+  }
 
-    $scope.$watch('city', function() {
-      cityService.city = $scope.city;
-    });
-  
-    $scope.submit = function() {
-      $location.path('/forecast'); 
-    };
+  public submit() {
+    this.cityService.city = this.city;
+    this.$location.path('/forecast');
   }
 }
