@@ -1,8 +1,6 @@
 import { weatherApp } from './app.js';
 
-weatherApp.service('cityService', function() {
-  this.city = 'London';
-});
+
 
 weatherApp.service('weatherService', ['$resource', function($resource) {
   this.weatherAPI = $resource('https://api.openweathermap.org/data/2.5/forecast');
