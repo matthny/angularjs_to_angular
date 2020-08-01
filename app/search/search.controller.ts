@@ -3,7 +3,6 @@ export class SearchController implements ng.IComponentController {
   public city: string;
 
   constructor(
-    public $scope,
     public $location,
     private cityService
   ) {

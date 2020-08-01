@@ -20,8 +20,8 @@ Forecast for {{ $ctrl.city }}
     <div class="col-md-6">
         <weather-report 
           weather="forecast"
-          convert-to-standard="convertToC(temp)"
-          convert-to-date="convertDate(date)"
+          convert-to-standard="$ctrl.convertToC(temp)"
+          convert-to-date="$ctrl.convertDate(date)"
           date-format="MMMM d, y, hh:mm"
         >
         </weather-report>

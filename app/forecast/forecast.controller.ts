@@ -6,7 +6,6 @@ export class ForecastController {
   public weatherForecast;
 
   constructor(
-    public $scope,
     public $routeParams,
     private cityService,
     private weatherService
@@ -19,13 +18,15 @@ export class ForecastController {
       this.weatherForecast = result.list;
     });
   
-    $scope.convertToC = function(tempK) {
-      return Math.round(tempK - 273.15);
-    }
 
-    $scope.convertDate = function(timestamp) {
-      return new Date(timestamp * 1000);
-    }
+  }
+
+  public convertToC = function(tempK) {
+    return Math.round(tempK - 273.15);
+  }
+
+  public convertDate = function(timestamp) {
+    return new Date(timestamp * 1000);
   }
 
 
