@@ -1,0 +1,30 @@
+<a href="#/" class="btn btn-primary fa fa-home">Back</a>
+<br>
+<br>
+
+Forecast for {{ $ctrl.city }}
+
+<div class="row">
+  <div class="col-md-6">
+  <hr>
+    Forecasts:
+  <a href='#/forecast/2' ng-class="{ 'bg-primary': forecasts === '2' }">2</a> |
+  <a href='#/forecast/5'ng-class="{ 'bg-primary': forecasts === '5' }">5</a> |
+  <a href='#/forecast/7'ng-class="{ 'bg-primary': forecasts === '7' }">7</a> |
+  <hr>
+  </div>
+</div>
+
+<div ng-repeat="forecast in $ctrl.weatherForecast">
+  <div class="row">
+    <div class="col-md-6">
+        <weather-report 
+          weather="forecast"
+          convert-to-standard="convertToC(temp)"
+          convert-to-date="convertDate(date)"
+          date-format="MMMM d, y, hh:mm"
+        >
+        </weather-report>
+    </div>
+  </div>
+</div>

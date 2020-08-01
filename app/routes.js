@@ -11,12 +11,10 @@ weatherApp.config(function($routeProvider, $locationProvider) {
       template: '<search></search>',
     })
     .when('/forecast', {
-      templateUrl: 'pages/forecast.html',
-      controller: 'forecastController'
+      template: '<forecast></forecast>',
     })
 
     .when('/forecast/:forecasts', {
-      templateUrl: 'pages/forecast.html',
-      controller: 'forecastController'
+      template: '<forecast></forecast>',
     })
 });

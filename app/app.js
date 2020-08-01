@@ -1,5 +1,7 @@
 import { SearchComponent } from './search/search.component';
 import { SearchController } from './search/search.controller';
+import { ForecastComponent } from './forecast/forecast.component';
+import { ForecastController } from './forecast/forecast.controller';
 
 export const weatherApp = angular.module('weatherApp', ['ngRoute', 'ngResource']);
 
@@ -10,7 +12,7 @@ weatherApp.controller('SearchController', [
   '$scope',
   '$location',
   'cityService',
-  function(
+  function (
     $scope,
     $location,
     cityService
@@ -20,4 +22,27 @@ weatherApp.controller('SearchController', [
       $location,
       cityService
     )
-}]);
+  }
+]);
+
+weatherApp.component('forecast', new ForecastComponent());
+
+weatherApp.controller('ForecastController', [
+  '$scope',
+  '$routeParams',
+  'cityService',
+  'weatherService',
+  function (
+    $scope,
+    $routeParams,
+    cityService,
+    weatherService
+  ) {
+    return new ForecastController(
+      $scope,
+      $routeParams,
+      cityService,
+      weatherService
+    )
+  }
+]);
