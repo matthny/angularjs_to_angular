@@ -1,4 +1,3 @@
-import { HomeController } from './app.controller';
 import { SearchComponent } from './search/search.component';
 import { SearchController } from './search/search.controller';
 
