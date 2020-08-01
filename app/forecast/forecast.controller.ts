@@ -17,8 +17,6 @@ export class ForecastController {
     this.weatherService.getWeather(this.city, this.forecasts).then((result) => {
       this.weatherForecast = result.list;
     });
-  
-
   }
 
   public convertToC = function(tempK) {
@@ -28,7 +26,5 @@ export class ForecastController {
   public convertDate = function(timestamp) {
     return new Date(timestamp * 1000);
   }
-
-
 }
 
