@@ -1,4 +1,4 @@
-<a href="#/" class="btn btn-primary fa fa-home">Back</a>
+<a routerLink="/" class="btn btn-primary fa fa-home">Back</a>
 <br>
 <br>
 
@@ -18,7 +18,6 @@ Forecast for {{ city }}
 <div *ngFor="let forecast of weatherForecast">
   <div class="row">
     <div class="col-md-6">
-      Siemka
       <app-weather-report
         [weather]="forecast"
         [dateFormat]="'MMM d, y h:mm:ss a'"
