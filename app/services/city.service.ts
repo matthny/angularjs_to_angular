@@ -1,6 +1,6 @@
 export class CityService {
 
-  public city = 'London';
+  public city = 'Katowice';
 
   constructor() {
     
