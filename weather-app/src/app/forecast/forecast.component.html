@@ -19,11 +19,11 @@ Forecast for {{ city }}
   <div class="row">
     <div class="col-md-6">
       Siemka
-      <!-- <weather-report
-        weather="forecast"
-        date-format="'MMM d, y h:mm:ss a'"
+      <app-weather-report
+        [weather]="forecast"
+        [dateFormat]="'MMM d, y h:mm:ss a'"
       >
-      </weather-report> -->
+      </app-weather-report>
     </div>
   </div>
 </div>

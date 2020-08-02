@@ -11,7 +11,6 @@ export class SearchComponent implements OnInit {
 
   public city: string;
 
-
   constructor(
     private cityService: CityService,
     private router: Router
@@ -21,7 +20,6 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
   }
-
 
   public submit() {
     this.cityService.city = this.city;

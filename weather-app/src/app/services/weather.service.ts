@@ -8,7 +8,6 @@ import { Observable } from 'rxjs';
 export class WeatherService {
 
   private apiUrl = 'https://api.openweathermap.org/data/2.5/forecast';
-  
 
   constructor(private http: HttpClient) { }
 
