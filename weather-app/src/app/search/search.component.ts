@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CityService } from '../services/city.service';
 
 @Component({
   selector: 'app-search',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  public city: string;
+
+
+  constructor(
+    private cityService: CityService,
+    private router: Router
+  ) {
+    this.city = this.cityService.city;
+  }
 
   ngOnInit() {
   }
 
+
+  public submit() {
+    this.cityService.city = this.city;
+    // this.router.navigate('/forecast');
+  }
 }
