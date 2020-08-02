@@ -25,6 +25,6 @@ export class SearchComponent implements OnInit {
 
   public submit() {
     this.cityService.city = this.city;
-    // this.router.navigate('/forecast');
+    this.router.navigate(['/forecast']);
   }
 }
