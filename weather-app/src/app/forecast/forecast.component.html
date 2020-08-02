@@ -1,0 +1,32 @@
+<a routerLink="/" class="btn btn-primary fa fa-home">Back</a>
+<br>
+<br>
+
+Forecast for {{ city }}
+
+<div class="row">
+  <div class="col-md-6">
+  <hr>
+    Forecasts:
+  <!-- <a routerLink="/forecast/2" ng-class="{ 'bg-primary': forecasts === '2' }">2</a> |
+  <a routerLink="/forecast/5" ng-class="{ 'bg-primary': forecasts === '5' }">5</a> |
+  <a routerLink="/forecast/7" ng-class="{ 'bg-primary': forecasts === '7' }">7</a> | -->
+  <a href="/forecast/2">2</a> |
+  <a href="/forecast/5">5</a> |
+  <a href="/forecast/7">7</a> |
+  <hr>
+  </div>
+</div>
+
+<div *ngFor="let forecast of weatherForecast">
+  <div class="row">
+    <div class="col-md-6">
+      <app-weather-report
+        *ngIf="forecast"
+        [weather]="forecast"
+        [dateFormat]="'MMM d, y h:mm:ss a'"
+      >
+      </app-weather-report>
+    </div>
+  </div>
+</div>

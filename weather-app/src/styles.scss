@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+.wrapper {
+  padding-left: 1rem;
+  padding-top: 1rem;
+  max-width: 40vw;
+}
+
+@media (max-width: 450px) {
+  .wrapper {
+    max-width: 90vw;
+  }
+}
