@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CityService } from '../services/city.service';
+import { WeatherService } from '../services/weather.service';
 
 @Component({
   selector: 'app-forecast',
@@ -18,16 +20,18 @@ export class ForecastComponent implements OnInit {
 
   constructor(
     // public $routeParams,
-    // private cityService,
-    // private weatherService
+    private cityService: CityService,
+    private weatherService: WeatherService
   ) {
-    // this.city = this.cityService.city;
-  
+    this.city = this.cityService.city;
+
+    // TODO
     // this.forecasts = $routeParams.forecasts || '2';
-  
-    // this.weatherService.getWeather(this.city, this.forecasts).then((result) => {   
-    //   this.weatherForecast = result.list;
-    // });
+    this.forecasts = '2';
+
+    this.weatherService.getWeather(this.city, this.forecasts).subscribe((result) => {
+      this.weatherForecast = result.list;
+    });
   }
 
 
