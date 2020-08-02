@@ -3,7 +3,7 @@ export class ForecastController {
 
   public city;
   public forecasts;
-  public weatherForecast;
+  public weatherForecast = [];
 
   constructor(
     public $routeParams,
@@ -14,17 +14,11 @@ export class ForecastController {
   
     this.forecasts = $routeParams.forecasts || '2';
   
-    this.weatherService.getWeather(this.city, this.forecasts).then((result) => {
+    this.weatherService.getWeather(this.city, this.forecasts).then((result) => {   
       this.weatherForecast = result.list;
     });
   }
 
-  public convertToC = function(tempK) {
-    return Math.round(tempK - 273.15);
-  }
 
-  public convertDate = function(timestamp) {
-    return new Date(timestamp * 1000);
-  }
 }
 

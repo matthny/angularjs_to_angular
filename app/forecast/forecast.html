@@ -18,13 +18,11 @@ Forecast for {{ $ctrl.city }}
 <div ng-repeat="forecast in $ctrl.weatherForecast">
   <div class="row">
     <div class="col-md-6">
-        <weather-report 
-          weather="forecast"
-          convert-to-standard="$ctrl.convertToC(temp)"
-          convert-to-date="$ctrl.convertDate(date)"
-          date-format="MMMM d, y, hh:mm"
-        >
-        </weather-report>
+      <weather-report
+        weather="forecast"
+        date-format="'MMM d, y h:mm:ss a'"
+      >
+      </weather-report>
     </div>
   </div>
 </div>
