@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CityService } from '../services/city.service';
 import { WeatherService } from '../services/weather.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-forecast',
@@ -16,18 +17,16 @@ export class ForecastComponent implements OnInit {
 
   public city;
   public forecasts;
-  public weatherForecast = [1, 2, 3];
+  public weatherForecast;
 
   constructor(
-    // public $routeParams,
+    private route: ActivatedRoute,
     private cityService: CityService,
     private weatherService: WeatherService
   ) {
     this.city = this.cityService.city;
 
-    // TODO
-    // this.forecasts = $routeParams.forecasts || '2';
-    this.forecasts = '2';
+    this.forecasts =  this.route.snapshot.params['forecasts'] || '2';
 
     this.weatherService.getWeather(this.city, this.forecasts).subscribe((result) => {
       this.weatherForecast = result.list;

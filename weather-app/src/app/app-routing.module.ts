@@ -7,7 +7,7 @@ import { ForecastComponent } from './forecast/forecast.component';
 const routes: Routes = [
   { path: '', component: SearchComponent },
   { path: 'forecast', component: ForecastComponent },
-
+  { path: 'forecast/:forecasts', component: ForecastComponent },
 ];
 
 @NgModule({
