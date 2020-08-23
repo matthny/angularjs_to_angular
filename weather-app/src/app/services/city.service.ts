@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class CityService {
 
-  public city = 'Katowice';
+  public city = '';
 
   constructor() { }
 }

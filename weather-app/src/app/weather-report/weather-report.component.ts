@@ -30,6 +30,5 @@ export class WeatherReportComponent implements OnInit {
     this.temp = WeatherReportComponent.convertToC(this.weather.main.temp);
     this.tempDate = WeatherReportComponent.convertDate(this.weather.dt);
   }
-
-
 }
+

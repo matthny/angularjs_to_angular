@@ -14,6 +14,9 @@ export class ForecastComponent implements OnInit {
   public forecasts: string;
   public weatherForecast: any;
 
+  public isLoading: boolean;
+  public isFound: boolean;
+
   constructor(
     private route: ActivatedRoute,
     private cityService: CityService,
@@ -22,12 +25,26 @@ export class ForecastComponent implements OnInit {
       this.city = this.cityService.city;
 
       this.forecasts =  this.route.snapshot.params['forecasts'] || '2';
-
-      this.weatherService.getWeather(this.city, this.forecasts).subscribe((result) => {
-        this.weatherForecast = result.list;
-      });
     }
+
 
     ngOnInit() {
+      this.isLoading = true;
+      this.isFound = false;
+
+      this.weatherService.getWeather(this.city, this.forecasts).subscribe(
+        (result) => {
+          this.isFound = true;
+          this.weatherForecast = result.list;
+        },
+        (error) => {
+          this.isFound = false;
+          console.log('error');
+        })
+        .add(
+          () => {
+            this.isLoading = false;
+        });
     }
+
 }
