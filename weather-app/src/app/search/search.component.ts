@@ -21,7 +21,7 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
   }
 
-  public submit(e) {
+  public submit(e): void {
     this.city = e.srcElement[0].value;
     this.cityService.city = this.city;
     this.router.navigate(['/forecast']);

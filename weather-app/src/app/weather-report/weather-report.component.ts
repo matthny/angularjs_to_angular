@@ -7,28 +7,29 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class WeatherReportComponent implements OnInit {
 
-  @Input() weather;
+  @Input() weather: any;
 
-  @Input() dateFormat;
+  @Input() dateFormat: string;
 
-  public temp;
-  public tempDate;
+  public temp: number;
+  public tempDate: Date;
+
+  private static convertToC(tempK) {
+    return Math.round(tempK - 273.15);
+  }
+
+  private static convertDate(timestamp) {
+    return new Date(timestamp * 1000);
+  }
 
   constructor(
   ) {
   }
 
   ngOnInit() {
-    this.temp = this.convertToC(this.weather.main.temp);
-    this.tempDate = this.convertDate(this.weather.dt);
+    this.temp = WeatherReportComponent.convertToC(this.weather.main.temp);
+    this.tempDate = WeatherReportComponent.convertDate(this.weather.dt);
   }
 
-  private convertToC(tempK) {
-    return Math.round(tempK - 273.15);
-  }
-
-  private convertDate(timestamp) {
-    return new Date(timestamp * 1000);
-  }
 
 }

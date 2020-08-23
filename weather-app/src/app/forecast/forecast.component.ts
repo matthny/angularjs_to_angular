@@ -10,28 +10,24 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ForecastComponent implements OnInit {
 
-  // constructor() { }
-
-  ngOnInit() {
-  }
-
-  public city;
-  public forecasts;
-  public weatherForecast;
+  public city: string;
+  public forecasts: string;
+  public weatherForecast: any;
 
   constructor(
     private route: ActivatedRoute,
     private cityService: CityService,
     private weatherService: WeatherService
-  ) {
-    this.city = this.cityService.city;
+    ) {
+      this.city = this.cityService.city;
 
-    this.forecasts =  this.route.snapshot.params['forecasts'] || '2';
+      this.forecasts =  this.route.snapshot.params['forecasts'] || '2';
 
-    this.weatherService.getWeather(this.city, this.forecasts).subscribe((result) => {
-      this.weatherForecast = result.list;
-    });
-  }
+      this.weatherService.getWeather(this.city, this.forecasts).subscribe((result) => {
+        this.weatherForecast = result.list;
+      });
+    }
 
-
+    ngOnInit() {
+    }
 }
