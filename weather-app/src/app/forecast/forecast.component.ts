@@ -23,10 +23,8 @@ export class ForecastComponent implements OnInit {
     private weatherService: WeatherService
     ) {
       this.city = this.cityService.city;
-
       this.forecasts =  this.route.snapshot.params['forecasts'] || '2';
     }
-
 
     ngOnInit() {
       this.isLoading = true;
@@ -39,12 +37,10 @@ export class ForecastComponent implements OnInit {
         },
         (error) => {
           this.isFound = false;
-          console.log('error');
         })
         .add(
           () => {
             this.isLoading = false;
         });
     }
-
 }
